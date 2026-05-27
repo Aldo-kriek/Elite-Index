@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SocialTrend Elite | 300+ Creator Index</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&family=Syncopate:wght@400;700&display=swap');
+        
+        :root {
+            --neon-blue: #00d2ff;
+            --neon-purple: #9d50bb;
+            --bg-deep: #020617;
+        }
+
+        body { 
+            font-family: 'Space Grotesk', sans-serif; 
+            background-color: var(--bg-deep); 
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+
+        .heading-font { font-family: 'Syncopate', sans-serif; }
+
+        .mesh-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            background: 
+                radial-gradient(circle at 0% 0%, rgba(0, 210, 255, 0.07) 0%, transparent 50%),
+                radial-gradient(circle at 100% 100%, rgba(157, 80, 187, 0.07) 0%, transparent 50%);
+        }
+
+        .social-card {
+            background: rgba(15, 23, 42, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .social-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--neon-blue);
+            background: rgba(15, 23, 42, 0.8);
+        }
+
+        .rank-badge {
+            background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+            clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+        }
+
+        .modal-blur {
+            background: rgba(2, 6, 23, 0.9);
+            backdrop-filter: blur(12px);
+        }
+
+        .animate-marquee {
+            display: inline-block;
+            white-space: nowrap;
+            animation: marquee 40s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(50%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .custom-scroll::-webkit-scrollbar { width: 4px; }
+        .custom-scroll::-webkit-scrollbar-track { background: transparent; }
+        .custom-scroll::-webkit-scrollbar-thumb { background: #334155; border-radius: 10px; }
+    </style>
+</head>
+<body class="min-h-screen">
+    <div class="mesh-bg"></div>
+
+    <!-- Live Ticker -->
+    <div class="w-full bg-black/40 border-b border-white/5 py-2 overflow-hidden sticky top-0 z-50 backdrop-blur-md">
+        <div class="animate-marquee text-[10px] font-bold tracking-[0.3em] text-blue-400 uppercase">
+            S&P SOCIAL INDEX: IG AGGREGATE +2.4% • YOUTUBE AD REV TRENDING UP • TIKTOK LATAM GROWTH SPIKE • MRBEAST PROJECTED 400M BY Q4 • CR7 RETAINS #1 SPOT • NEW DATA SYNC COMPLETE...
+        </div>
+    </div>
+
+    <div class="max-w-[1600px] mx-auto px-4 py-8 flex flex-col lg:flex-row gap-8">
+        
+        <!-- Sidebar -->
+        <aside class="lg:w-80 flex-shrink-0">
+            <div class="sticky top-20">
+                <div class="mb-10">
+                    <h1 class="heading-font text-2xl font-bold tracking-tighter leading-tight mb-2">ELITE<br><span class="text-blue-500">INDEX</span></h1>
+                    <p class="text-[10px] text-slate-500 uppercase tracking-[0.4em]">300+ Global Creators</p>
+                </div>
+
+                <div class="space-y-8">
+                    <div>
+                        <label class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-3 block">Universal Search</label>
+                        <input type="text" id="searchInput" placeholder="Type name or category..." 
+                               class="w-full bg-slate-900/50 border border-slate-800 p-4 rounded-2xl focus:ring-1 focus:ring-blue-500 outline-none transition-all text-sm placeholder:text-slate-600">
+                    </div>
+
+                    <div>
+                        <label class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-3 block">Channel Isolation</label>
+                        <div class="grid grid-cols-1 gap-2">
+                            <button onclick="filterBy('all')" class="filter-btn text-left px-5 py-3.5 rounded-2xl bg-blue-600 font-bold text-xs uppercase tracking-widest">All Records</button>
+                            <button onclick="filterBy('instagram')" class="filter-btn text-left px-5 py-3.5 rounded-2xl bg-slate-900/50 hover:bg-slate-800 text-slate-400 font-bold text-xs uppercase tracking-widest transition">Instagram</button>
+                            <button onclick="filterBy('tiktok')" class="filter-btn text-left px-5 py-3.5 rounded-2xl bg-slate-900/50 hover:bg-slate-800 text-slate-400 font-bold text-xs uppercase tracking-widest transition">TikTok</button>
+                            <button onclick="filterBy('youtube')" class="filter-btn text-left px-5 py-3.5 rounded-2xl bg-slate-900/50 hover:bg-slate-800 text-slate-400 font-bold text-xs uppercase tracking-widest transition">YouTube</button>
+                        </div>
+                    </div>
+
+                    <div class="p-6 rounded-3xl bg-slate-900/30 border border-white/5">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Database</span>
+                            <span class="px-2 py-0.5 rounded-md bg-emerald-500/10 text-emerald-500 text-[10px] font-bold">ONLINE</span>
+                        </div>
+                        <p class="text-3xl font-bold" id="itemCount">0</p>
+                        <p class="text-[10px] text-slate-500 mt-1 uppercase tracking-tight">Verified Profiles Indexed</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Grid -->
+        <main class="flex-grow">
+            <div id="loadingState" class="flex flex-col items-center justify-center py-40">
+                <div class="w-10 h-10 border-2 border-blue-500/20 border-t-blue-500 rounded-full animate-spin"></div>
+                <p class="mt-4 text-[10px] font-bold tracking-[0.3em] text-blue-400 uppercase">Decrypting Social Layers</p>
+            </div>
+
+            <div id="influencerGrid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5"></div>
+        </main>
+    </div>
+
+    <!-- Modal System -->
+    <div id="infoModal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-6 modal-blur">
+        <div class="bg-slate-900 border border-white/10 w-full max-w-2xl rounded-[2rem] overflow-hidden shadow-2xl relative">
+            <button onclick="closeModal()" class="absolute top-8 right-8 text-slate-500 hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <div id="modalContent" class="p-10"></div>
+        </div>
+    </div>
+
+    <script>
+        let allInfluencers = [];
+        let currentFilter = 'all';
+
+        const generateDataset = () => {
+            const data = [];
+            const categories = ["Entertainment", "Sports", "Fashion", "Tech", "Lifestyle", "Gaming", "Education", "Finance"];
+            
+            // Seed Data for accurate ranking
+            const seeds = {
+                Instagram: [
+                    ["Cristiano Ronaldo", 672000000, "Global football icon and brand titan."],
+                    ["Lionel Messi", 504000000, "Argentine legend and Inter Miami superstar."],
+                    ["Selena Gomez", 415000000, "Musician, actress, and mental health advocate."],
+                    ["Kylie Jenner", 399000000, "Beauty mogul and founder of Kylie Cosmetics."],
+                    ["Dwayne Johnson", 395000000, "The Rock. Hollywood's most influential actor."]
+                ],
+                TikTok: [
+                    ["Khaby Lame", 162900000, "Master of silent reaction comedy."],
+                    ["Charli D'Amelio", 155000000, "Original TikTok dance pioneer."],
+                    ["Bella Poarch", 94000000, "Musician and facial expression genius."],
+                    ["MrBeast (TikTok)", 98000000, "TikTok division of the MrBeast empire."],
+                    ["Zach King", 82000000, "Digital magic and illusion specialist."]
+                ],
+                YouTube: [
+                    ["MrBeast", 312000000, "World's leading philanthropist and entertainer."],
+                    ["T-Series", 265000000, "Indian music and film production powerhouse."],
+                    ["Cocomelon", 175000000, "The king of nursery rhymes and animation."],
+                    ["PewDiePie", 111000000, "OG gaming legend and commentator."],
+                    ["Markiplier", 36000000, "Horror gaming and sketch comedy giant."]
+                ]
+            };
+
+            // Generate ~100 per platform
+            ["Instagram", "TikTok", "YouTube"].forEach(platform => {
+                // Add the seeds first
+                seeds[platform].forEach(s => {
+                    data.push({
+                        name: s[0],
+                        platform: platform,
+                        followers: s[1],
+                        growth_rate: (Math.random() * 5 + 0.5).toFixed(1),
+                        bio: s[2],
+                        category: categories[Math.floor(Math.random() * categories.length)]
+                    });
+                });
+
+                // Generate 95+ more for each
+                for(let i = 1; i <= 95; i++) {
+                    const baseFollowers = platform === 'Instagram' ? 50000000 : platform === 'TikTok' ? 15000000 : 8000000;
+                    data.push({
+                        name: `${platform} Star #${i}`,
+                        platform: platform,
+                        followers: Math.floor(Math.random() * baseFollowers) + 2000000,
+                        growth_rate: (Math.random() * 12 - 2).toFixed(1),
+                        bio: `Strategic content creator specializing in ${categories[i % categories.length]} audience engagement.`,
+                        category: categories[i % categories.length]
+                    });
+                }
+            });
+
+            return data.sort((a, b) => b.followers - a.followers);
+        };
+
+        async function init() {
+            allInfluencers = generateDataset();
+            setTimeout(() => {
+                applyFilters();
+                document.getElementById('loadingState').classList.add('hidden');
+            }, 500);
+        }
+
+        function renderGrid(data) {
+            const grid = document.getElementById('influencerGrid');
+            grid.innerHTML = '';
+            document.getElementById('itemCount').innerText = data.length;
+
+            data.forEach((person, index) => {
+                const card = document.createElement('div');
+                card.className = 'social-card rounded-[1.5rem] p-6 relative overflow-hidden group';
+                
+                card.innerHTML = `
+                    <div class="rank-badge absolute top-0 right-0 w-10 h-10 flex items-center justify-center font-bold text-xs pr-1 pb-1">
+                        ${index + 1}
+                    </div>
+                    
+                    <div class="flex items-center gap-4 mb-6">
+                        <img src="https://ui-avatars.com/api/?background=random&color=fff&bold=true&name=${encodeURIComponent(person.name)}" 
+                             class="w-12 h-12 rounded-xl object-cover ring-1 ring-white/10">
+                        <div>
+                            <h3 class="text-sm font-bold truncate max-w-[150px]">${person.name}</h3>
+                            <span class="text-[9px] font-bold uppercase tracking-widest text-blue-500">${person.platform}</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between items-end mb-4">
+                        <div>
+                            <p class="text-[9px] text-slate-500 font-bold uppercase tracking-widest mb-1">Followers</p>
+                            <p class="text-xl font-bold">${formatNumber(person.followers)}</p>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-[9px] font-bold px-2 py-0.5 rounded bg-slate-800 text-slate-300">${person.category}</span>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-2">
+                        <button onclick="openAction('info', '${encodeURIComponent(person.name)}')" class="flex-grow py-2.5 rounded-xl bg-slate-800 hover:bg-blue-600 text-[10px] font-bold tracking-widest uppercase transition-all duration-300">Profile</button>
+                        <button onclick="openAction('stats', '${encodeURIComponent(person.name)}')" class="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-white hover:text-black text-[10px] font-bold tracking-widest uppercase transition-all duration-300">Stats</button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function openAction(type, encodedName) {
+            const name = decodeURIComponent(encodedName);
+            const p = allInfluencers.find(x => x.name === name);
+            if (!p) return;
+
+            const modal = document.getElementById('infoModal');
+            const content = document.getElementById('modalContent');
+            
+            if (type === 'info') {
+                content.innerHTML = `
+                    <div class="flex items-center gap-6 mb-10">
+                        <img src="https://ui-avatars.com/api/?background=3b82f6&color=fff&size=128&bold=true&name=${encodedName}" class="w-20 h-20 rounded-3xl">
+                        <div>
+                            <h2 class="text-2xl font-bold heading-font uppercase">${p.name}</h2>
+                            <p class="text-blue-500 text-xs font-bold tracking-[0.3em] uppercase">${p.platform} • ${p.category}</p>
+                        </div>
+                    </div>
+                    <div class="space-y-8">
+                        <div>
+                            <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-3">Intelligence Summary</p>
+                            <p class="text-slate-300 text-lg leading-relaxed font-light">${p.bio}</p>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="p-6 rounded-3xl bg-slate-800/40 border border-white/5">
+                                <p class="text-[9px] text-slate-500 font-bold uppercase mb-2">Audience Score</p>
+                                <p class="text-2xl font-bold">${(Math.random() * 20 + 80).toFixed(1)}/100</p>
+                            </div>
+                            <div class="p-6 rounded-3xl bg-slate-800/40 border border-white/5">
+                                <p class="text-[9px] text-slate-500 font-bold uppercase mb-2">Market Reach</p>
+                                <p class="text-2xl font-bold">Global</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } else {
+                content.innerHTML = `
+                    <h2 class="text-xl font-bold heading-font uppercase mb-8">Performance Metrics</h2>
+                    <div class="space-y-10">
+                        <div class="grid grid-cols-3 gap-6 text-center">
+                            <div>
+                                <p class="text-[9px] text-slate-500 font-bold uppercase mb-2">Engagement</p>
+                                <p class="text-xl font-bold text-blue-400">${(Math.random() * 4 + 1.2).toFixed(2)}%</p>
+                            </div>
+                            <div>
+                                <p class="text-[9px] text-slate-500 font-bold uppercase mb-2">Growth Rate</p>
+                                <p class="text-xl font-bold text-emerald-400">+${p.growth_rate}%</p>
+                            </div>
+                            <div>
+                                <p class="text-[9px] text-slate-500 font-bold uppercase mb-2">Virality</p>
+                                <p class="text-xl font-bold text-purple-400">High</p>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <p class="text-[9px] font-bold text-slate-500 uppercase tracking-widest mb-6">Audience Growth (Last 6 Months)</p>
+                            <div class="flex items-end gap-3 h-40">
+                                ${[30, 45, 60, 55, 80, 95].map(h => `
+                                    <div class="flex-grow group relative">
+                                        <div class="bg-blue-500/20 group-hover:bg-blue-500 transition-all rounded-t-xl" style="height: ${h}%"></div>
+                                        <div class="absolute -top-6 left-1/2 -translate-x-1/2 text-[8px] font-bold opacity-0 group-hover:opacity-100 transition-opacity uppercase">${h}%</div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+            modal.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('infoModal').classList.add('hidden');
+        }
+
+        function formatNumber(num) {
+            if (num >= 1000000000) return (num / 1000000000).toFixed(1) + 'B';
+            if (num >= 1000000) return (num / 1000000).toFixed(1) + 'M';
+            return num.toLocaleString();
+        }
+
+        function filterBy(platform) {
+            currentFilter = platform;
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                const text = btn.innerText.toLowerCase();
+                if ((platform === 'all' && text.includes('all')) || (text.includes(platform) && platform !== 'all')) {
+                    btn.className = 'filter-btn text-left px-5 py-3.5 rounded-2xl bg-blue-600 font-bold text-xs uppercase tracking-widest transition';
+                } else {
+                    btn.className = 'filter-btn text-left px-5 py-3.5 rounded-2xl bg-slate-900/50 hover:bg-slate-800 text-slate-400 font-bold text-xs uppercase tracking-widest transition';
+                }
+            });
+            applyFilters();
+        }
+
+        function applyFilters() {
+            const term = document.getElementById('searchInput').value.toLowerCase().trim();
+            const filtered = allInfluencers.filter(p => {
+                const matchesPlatform = currentFilter === 'all' || p.platform.toLowerCase() === currentFilter;
+                const matchesSearch = p.name.toLowerCase().includes(term) || 
+                                     p.category.toLowerCase().includes(term) || 
+                                     p.bio.toLowerCase().includes(term);
+                return matchesPlatform && matchesSearch;
+            });
+            renderGrid(filtered);
+        }
+
+        document.getElementById('searchInput').addEventListener('input', applyFilters);
+        window.onclick = (e) => { if(e.target == document.getElementById('infoModal')) closeModal(); }
+        
+        init();
+    </script>
+</body>
+</html>
