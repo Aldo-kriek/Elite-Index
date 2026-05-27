@@ -2,9 +2,10 @@
 SocialTrend Elite: 
 ---------------------
 
+Welcome to SocialTrend Elite! This simple guide is designed to help you quickly understand how to navigate, search, and analyze the world's top social media personalities using our high-tech dashboard.
+
 <img width="2026" height="817" alt="image" src="https://github.com/user-attachments/assets/de5feea8-46f1-42f2-a5d2-82b8dfd5b3ef" />
 
-Welcome to SocialTrend Elite! This simple guide is designed to help you quickly understand how to navigate, search, and analyze the world's top social media personalities using our high-tech dashboard.
 
 🖥️ 1. The Main Dashboard (What You See)
 
