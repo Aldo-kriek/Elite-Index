@@ -6,8 +6,9 @@ Welcome to SocialTrend Elite! This simple guide is designed to help you quickly 
 
 <img width="2026" height="817" alt="image" src="https://github.com/user-attachments/assets/de5feea8-46f1-42f2-a5d2-82b8dfd5b3ef" />
 
-
+----------------------------------------
 🖥️ 1. The Main Dashboard (What You See)
+----------------------------------------
 
 When you open the website, you are presented with a futuristic control center:
 
@@ -23,7 +24,9 @@ Global Reach Indicator: A progress bar that visually compares their audience siz
 
 Growth Rate: A green up-arrow ($\uparrow$) or red down-arrow ($\downarrow$) showing their monthly audience momentum.
 
+-------------------------------------------
 🔍 2. Finding Creators (Search & Filters)
+-------------------------------------------
 
 The left sidebar holds your main control panel, allowing you to quickly sort and locate creators:
 
@@ -41,7 +44,9 @@ YouTube: Show long-form entertainers, gamers, tech reviewers, and streamers.
 
 Note: The Search Bar and Platform Filters work together. For example, you can select "YouTube" and type "Tech" to see only tech channels.
 
+---------------------------------------
 📊 3. Interactive Information Options
+---------------------------------------
 
 At the bottom of every creator card, you will find two interactive buttons designed to show you deeper analytics:
 
