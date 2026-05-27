@@ -44,6 +44,8 @@ YouTube: Show long-form entertainers, gamers, tech reviewers, and streamers.
 
 Note: The Search Bar and Platform Filters work together. For example, you can select "YouTube" and type "Tech" to see only tech channels.
 
+<img width="2024" height="824" alt="image" src="https://github.com/user-attachments/assets/a9cc5bc9-99f7-48f4-a09e-82ba333c60c4" />
+
 ---------------------------------------
 📊 3. Interactive Information Options
 ---------------------------------------
@@ -70,6 +72,9 @@ Metric Breakdown: Displays their total follower count, monthly growth rate, and 
 
 6-Month Historical Chart: A dynamic bar graph visualizing their estimated audience growth curve over the last half-year.
 
+<img width="2018" height="825" alt="image" src="https://github.com/user-attachments/assets/d1ca372b-7614-4910-849d-e78719bec3cb" />
+
+
 ----------------------------
 💡 Quick Tips for Best Use
 ----------------------------
@@ -81,10 +86,9 @@ Visual Indicators: Hovering your mouse over any creator card will make it glow a
 Closing Pop-ups: You can close any Profile or Stats pop-up by clicking the "×" in the top-right corner of the window, or by clicking anywhere on the dark background behind the pop-up.
 
 
-<img width="2024" height="824" alt="image" src="https://github.com/user-attachments/assets/a9cc5bc9-99f7-48f4-a09e-82ba333c60c4" />
 
 
-<img width="2018" height="825" alt="image" src="https://github.com/user-attachments/assets/d1ca372b-7614-4910-849d-e78719bec3cb" />
+
 
 
 
